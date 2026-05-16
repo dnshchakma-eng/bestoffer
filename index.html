@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Premium Rewards Hub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:
+    radial-gradient(circle at top,#32004f 0%,#140020 40%,#050008 100%);
+    color:#fff;
+    min-height:100vh;
+    overflow-x:hidden;
+    padding:35px 15px;
+}
+
+/* ===== CONTAINER ===== */
+
+.container{
+    max-width:1150px;
+    margin:auto;
+}
+
+/* ===== HEADER ===== */
+
+.header{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.header h1{
+    font-size:clamp(2.5rem,7vw,5rem);
+    font-weight:800;
+    line-height:1.1;
+
+    background:linear-gradient(to bottom,#fff,#bdbdbd);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    text-shadow:
+    0 0 25px rgba(255,255,255,.18);
+}
+
+.ribbon{
+    display:inline-block;
+    margin-top:15px;
+
+    padding:10px 28px;
+    border-radius:8px;
+
+    background:
+    linear-gradient(to bottom,#666,#333);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    font-size:.78rem;
+    font-weight:600;
+    letter-spacing:.5px;
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.45);
+}
+
+/* ===== GRID ===== */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+    gap:24px;
+}
+
+/* ===== CARD ===== */
+
+.card{
+    position:relative;
+
+    border-radius:24px;
+    overflow:hidden;
+
+    background:#12121b;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.35s ease;
+
+    box-shadow:
+    0 18px 35px rgba(0,0,0,.55);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 28px 50px rgba(0,0,0,.7),
+    0 0 18px rgba(162,89,255,.18);
+}
+
+/* ===== IMAGE AREA ===== */
+
+.top{
+    height:190px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    background:#111;
+}
+
+.top img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    transition:.4s ease;
+}
+
+.card:hover .top img{
+    transform:scale(1.08);
+}
+
+/* ===== BADGES ===== */
+
+.badge{
+    position:absolute;
+    top:12px;
+
+    padding:6px 12px;
+
+    border-radius:10px;
+
+    font-size:.65rem;
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    z-index:10;
+
+    box-shadow:
+    0 4px 12px rgba(0,0,0,.35);
+}
+
+.hot{
+    right:12px;
+
+    background:
+    linear-gradient(to right,#ff416c,#ff4b2b);
+}
+
+.verify{
+    left:12px;
+
+    background:
+    linear-gradient(to right,#00d68f,#76ffd4);
+
+    color:#04241b;
+}
+
+/* ===== CONTENT ===== */
+
+.content{
+    padding:20px;
+
+    background:
+    linear-gradient(to bottom,#161620,#0c0c14);
+}
+
+.content h2{
+    min-height:54px;
+
+    text-align:center;
+
+    font-size:1rem;
+    line-height:1.4;
+    font-weight:700;
+
+    margin-bottom:18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* ===== BUTTON ===== */
+
+.btn{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    width:100%;
+
+    padding:14px;
+
+    border-radius:13px;
+
+    text-decoration:none;
+    color:#fff;
+
+    font-weight:800;
+    font-size:.82rem;
+
+    letter-spacing:.5px;
+
+    transition:.3s ease;
+}
+
+.btn:hover{
+    transform:scale(1.03);
+    filter:brightness(1.08);
+}
+
+.green{
+    background:
+    linear-gradient(to bottom,#16c65b,#087d33);
+}
+
+.blue{
+    background:
+    linear-gradient(to bottom,#3b8cff,#114db1);
+}
+
+.red{
+    background:
+    linear-gradient(to bottom,#ff3b3b,#aa1010);
+}
+
+.gold{
+    background:
+    linear-gradient(to bottom,#d1a041,#7c5411);
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+    margin-top:55px;
+    text-align:center;
+
+    color:#9f9f9f;
+    font-size:.8rem;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:768px){
+
+    .grid{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .top{
+        height:180px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- HEADER -->
+
+<div class="header">
+
+    <h1>Unlock Your Rewards</h1>
+
+    <div class="ribbon">
+        Verified Offers • Fast Access • Big Prizes
+    </div>
+
+</div>
+
+<!-- GRID -->
+
+<div class="grid">
+
+    <!-- CARD 1 -->
+
+    <div class="card">
+
+        <div class="badge hot">
+            🔥 Ending Soon
+        </div>
+
+        <div class="top">
+            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=1200&auto=format&fit=crop" alt="">
+        </div>
+
+        <div class="content">
+
+            <h2>PrizeZappy - Chance to Win $50K </h2>
+
+            <a href="https://smrturl.co/a/s70fd96d5f2/18251?s1=moloy" class="btn green">
+                ENTER TO WIN
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- CARD 2 -->
+
+    <div class="card">
+
+        <div class="badge verify">
+            ✓ Verified
+        </div>
+
+        <div class="top">
+            <img src="https://images.unsplash.com/photo-1607082349566-187342175e2f?q=80&w=1200&auto=format&fit=crop" alt="">
+        </div>
+
+        <div class="content">
+
+            <h2>Walmart eCard Instant Access</h2>
+
+            <a href="https://smrturl.co/a/s70fd96d5f2/20132?s1=moloy" class="btn blue">
+                CLAIM ECARD
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- CARD 3 -->
+
+    <div class="card">
+
+        <div class="badge hot">
+            Trending #1
+        </div>
+
+        <div class="top">
+            <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=1200&auto=format&fit=crop" alt="">
+        </div>
+
+        <div class="content">
+
+            <h2>$1,000 Coke vs Pepsi Challenge</h2>
+
+            <a href="https://smrturl.co/a/s70fd96d5f2/18396?s1=moloy" class="btn red">
+                START VOTE
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- CARD 4 -->
+
+    <div class="card">
+
+        <div class="badge verify">
+            ✓ Verified
+        </div>
+
+        <div class="top">
+            <img src="https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?q=80&w=1200&auto=format&fit=crop" alt="">
+        </div>
+
+        <div class="content">
+
+            <h2>$1,000 Amazon Gift Card Pack</h2>
+
+            <a href="https://smrturl.co/a/s70fd96d5f2/19630?s1=moloy" class="btn blue">
+                GET STARTED
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- CARD 5 -->
+
+    <div class="card">
+
+        <div class="badge hot">
+            Top Rated
+        </div>
+
+        <div class="top">
+            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1200&auto=format&fit=crop" alt="">
+        </div>
+
+        <div class="content">
+
+            <h2>$1,000 Aldi Rewards</h2>
+
+            <a href="https://smrturl.co/a/s70fd96d5f2/17412?s1=moloy" class="btn gold">
+                UNLOCK REWARD
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- CARD 6 -->
+
+    <div class="card">
+
+        <div class="badge hot">
+            Popular
+        </div>
+
+        <div class="top">
+            <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop" alt="">
+        </div>
+
+        <div class="content">
+
+            <h2>GnG - CashApp $750</h2>
+
+            <a href="https://smrturl.co/a/s70fd96d5f2/20133?s1=moloy" class="btn green">
+                RECEIVE CASH
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    Copyright © 2026 RewardsHub • Safe & Secure Offers
+</footer>
+
+</div>
+
+</body>
+</html>
